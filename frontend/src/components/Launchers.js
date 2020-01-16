@@ -20,7 +20,7 @@ export default class Launchers extends Component {
   render() {
     return (
         <Fragment>
-        <h1 className="mt-2">Missions</h1>
+        <h1 className="mt-2 text-light">Missions</h1>
         <hr/>
       <div className="launches container card p-3 my-4">
         <Query query={LAUNCHES_QUERY}>
@@ -37,10 +37,11 @@ export default class Launchers extends Component {
       </div></Fragment>
     );
   }
-
+/*To get full mission list do index< data.launches.length in show data*/
   showData = data =>
     data.launches.map((launch, index) =>
-      index < data.launches.length ? (
+   
+      index < 20 ? (
         <li
           className="list-group-item list-group-item bg-light my-1 py-2 pr-4 pl-3 clearfix"
           key={index}

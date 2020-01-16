@@ -30,11 +30,11 @@ let flight_number=this.props.match.params.flight_number
             <Query query={LAUNCH_QUERY} variables={{flight_number}}>
 {({loading,error,data})=>{
     if(loading)
-    return <h1>Loading..</h1>
+    return <h1 className="bg-primary text-light p-2">Loading..</h1>
    
     if(error) return 'error'
     return <Fragment >
-        <h1 className="text-warning mb-0">Mission:{data.launch.mission_name}</h1>
+        <h1 className="text-light mb-0">Mission:{data.launch.mission_name}</h1>
         <Link className="btn btn-primary mt-1 btn-sm" to="/">Go Back</Link>
         <hr/>
              <div className="card container p-3 mb-4 ">
